@@ -130,9 +130,12 @@ function BillForm({ selectedFren, onSplitBill }) {
         type="number"
         value={yourExpense}
         onChange={(e) =>
+        {
           setYourExpense(
             Number(e.target.value) > billValue ? yourExpense : Number(e.target.value)
           )
+          console.log(e.target.value, yourExpense)
+        }
         }
       />
       <label>👫 {selectedFren.name}'s Contribution</label>
@@ -196,10 +199,5 @@ function AddForm({ data, setData }) {
 
 
 
-function Button({children}){
-  return <button>
-    {children}
-  </button>
-}
 
 export default App;
